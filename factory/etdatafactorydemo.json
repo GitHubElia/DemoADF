@@ -1,0 +1,9 @@
+{
+	"name": "etdatafactorydemo",
+	"location": "italynorth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "093797ff-db02-423b-9264-ef8a0edf2dee",
+		"tenantId": "f123e248-0674-4ecd-958d-c8f71eba0280"
+	}
+}

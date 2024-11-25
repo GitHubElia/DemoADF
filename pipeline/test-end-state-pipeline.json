@@ -1,0 +1,54 @@
+{
+	"name": "test-end-state-pipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "number1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "number1",
+					"value": "kk"
+				}
+			},
+			{
+				"name": "number2",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "number1",
+						"dependencyConditions": [
+							"Skipped",
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "number2",
+					"value": "pippo"
+				}
+			}
+		],
+		"variables": {
+			"number1": {
+				"type": "Integer"
+			},
+			"number2": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2024-04-17T18:52:31Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
